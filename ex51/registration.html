@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Newborn Registration</title>
+        <style>
+            body{
+                margin-left:10px;
+                background-color:#008b8b;
+                font-family:"Times New Roman", serif;
+                color:white;
+                font-size: 18px;
+            }
+
+            img{
+                width:480px;
+                height:auto;
+                margin: auto;
+                display: block;
+            }
+
+            h1{
+                text-align:center;
+                font-size:35px;
+                margin:30px 0;
+                font-family:Arial, sans-serif;
+            }
+
+            input[type="text"], input[type="date"], input[type="number"] {
+                padding:6px;
+                margin:10px;
+            }
+
+            .doctor-box{
+                width:170px;
+                font-size:16px;
+            }
+
+            .btn_group{
+                text-align:center;
+                margin-top:20px;
+            }
+
+            button{
+                padding:8px 20px;
+                font-size:18px;
+                margin:0 10px;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="images/Logo.gif">
+        <h1>Newborn Registration</h1>
+
+        <form id="newbornForm">
+            <div>
+                Date:
+                <input type="date">
+            </div>
+
+            <div>
+                1&rpar; Infant's first name:
+                <input type="text">
+
+                Last:
+                <input type="text">
+            </div>
+
+            <div>
+                2&rpar; Medical Record #:
+                <input type="text">
+            </div>
+
+            <div>
+                3&rpar; Date of birth:
+                <input type="date">
+            </div>
+
+            <div>
+                4&rpar; Birth weight:
+                <input type="number">
+            </div>
+
+            <div>
+                5&rpar; APGAR score :
+                <input type="number">
+            </div>
+
+            <div>
+                6&rpar; Mother's first name:
+                <input type="text">
+
+                Last:
+                <input type="text">
+            </div>
+
+            <div>
+                7&rpar; Father's first name :
+                <input type="text">
+
+                Last:
+                <input type="text">
+            </div>
+
+            <div>
+                8&rpar; Physician (check all that apply):
+                <select size="4" class="doctor-box">
+                    <option value="Dr. Warren Albert">Dr. Warren Albert</option>
+                    <option value="Dr. Maria Alvarez">Dr. Maria Alvarez</option>
+                    <option value="Dr. Karen Brinkman">Dr. Karen Brinkman</option>
+                    <option value="Dr. Micheal Kerry">Dr. Micheal Kerry</option>
+                </select>
+            </div>
+
+            <div class="btn_group">
+                <button type="button" onclick="alert('Newborn registration completed!')";>
+                    Register
+                </button>
+
+                <button type="reset">
+                    Cancel
+                </button>
+            </div>
+        </form>
+
+    </body>
+</html>
