@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Message Result</title>
+        <style>
+            body{
+                font-family:Arial, sans-serif;
+                background:white;
+            }
+
+            h1{
+                color:#b01c57;
+                font-size: 25px;
+            }
+
+            p{
+                font-size:16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Message Sent Successfully!</h1>
+        <p id="fullname"></p>
+        <p id="email"></p>
+        <p id="department"></p>
+        <p id="title"></p>
+        <p id="content"></p>
+
+        <script>
+            const params =
+                new URLSearchParams(window.location.search);
+            document.getElementById("fullname").innerHTML =
+                "<b>Full Name:</b> " +
+                params.get("fullname");
+
+            document.getElementById("email").innerHTML =
+                "<b>Email:</b> " +
+                params.get("email");
+
+            document.getElementById("department").innerHTML =
+                "<b>Send To:</b> " +
+                params.get("department");
+
+            document.getElementById("title").innerHTML =
+                "<b>Title:</b> " +
+                params.get("title");
+
+            document.getElementById("content").innerHTML =
+                "<b>Content:</b> " +
+                params.get("content");
+        </script>
+
+    </body>
+</html>

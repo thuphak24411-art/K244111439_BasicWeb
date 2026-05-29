@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact Page</title>
+        <style>
+            body{
+                font-family:Arial, sans-serif;
+                background:white;
+            }
+
+            h1{
+                margin-top:0;
+                font-size:20px;
+            }
+
+            label{
+                display:block;
+                margin-top:18px;
+                margin-bottom:6px;
+                font-size:16px;
+            }
+
+            input, select, textarea{
+                width:100%;
+                padding:10px;
+                font-size:16px;
+                box-sizing:border-box;
+            }
+
+            textarea{
+                height:160px;
+                resize:none;
+            }
+
+            .row{
+                display:flex;
+                gap:18px;
+            }
+
+            .col{
+                flex:1;
+            }
+
+            button{
+                margin-top:18px;
+                background:#b01c57;
+                color:white;
+                border:none;
+                padding:10px 30px;
+                font-size:16px;
+                cursor:pointer;
+                border-radius:3px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Contact the editorial office</h1>
+
+        <form action="result.html" method="GET">
+            <label>Full name</label>
+            <input type="text" name="fullname" required>
+
+            <div class="row">
+                <div class="col">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="col">
+                    <label>Send to</label>
+                    <select name="department">
+                        <option>Editorial board</option>
+                        <option>News Department</option>
+                        <option>Board of Perspectives</option>
+                        <option>World Board</option>
+                        <option>Business Department</option>
+                    </select>
+                </div>
+            </div>
+
+            <label>Title</label>
+            <input type="text" name="title">
+
+            <label>Content</label>
+            <textarea name="content"></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+
+    </body>
+</html>
