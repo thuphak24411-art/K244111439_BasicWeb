@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GPA Calculator</title>
+    <script>
+        function calculateGPA(course) {
+            qt = eval(myform.qt.value);
+            gk = eval(myform.gk.value);
+            ck = eval(myform.ck.value);
+            tn = eval(myform.tn.value);
+            gpa = 0;
+
+            if (course === "course1") {
+                gpa = qt * 0.3 + gk * 0.2 + ck * 0.5;
+                myform.ptqtrinh.value = "30%";
+                myform.ptgiuaky.value = "20%";
+                myform.ptcuoiky.value = "50%";
+            }
+            else if (course === "course2") {
+                gpa = qt * 0.25 + gk * 0.25 + ck * 0.5;
+                myform.ptgiuaky.value = "25%";
+                myform.ptqtrinh.value = "25%";
+                myform.ptcuoiky.value = "50%";  
+            }
+            else if (course === "course3") {
+                gpa = qt * 0.15 + gk * 0.2 + ck * 0.5 + tn * 0.15;
+                myform.ptqtrinh.value = "15%";
+                myform.ptgiuaky.value = "20%";
+                myform.ptcuoiky.value = "50%";
+                myform.pttainang.value = "15%";
+            }
+
+            myform.result.value = gpa.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>GPA Calculator</h1>
+    <h2>Select Course</h2>
+
+    <form name="myform">
+        <select name="select">
+            <option value="course1">Course 1</option>
+            <option value="course2">Course 2</option>
+            <option value="course3">Course 3</option>
+        </select>
+
+        <p>
+            Quá trình:
+            <input type="text" name="qt" min="0" max="10" step="0.1">
+            <input type="text" name="ptqtrinh" readonly>
+        </p>
+
+        <p>
+            Giữa kỳ:
+            <input type="text" name="gk" min="0" max="10" step="0.1">
+            <input type="text" name="ptgiuaky" readonly>
+        </p>
+
+        <p>
+            Cuối kỳ:
+            <input type="text" name="ck" min="0" max="10" step="0.1">
+            <input type="text" name="ptcuoiky" readonly>
+        </p>
+
+        <p>
+            Tài năng:
+            <input type="text" name="tn" min="0" max="10" step="0.1">
+            <input type="text" name="pttainang" readonly>
+        </p>
+
+        <p>
+            Result:
+            <input type="text" name="result" readonly>
+        </p>
+
+        <input type="button" value="GPA"
+               onclick="calculateGPA(myform.select.value)">
+    </form>
+</body>
+</html>
