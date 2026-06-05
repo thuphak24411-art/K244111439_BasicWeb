@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Math Fuction</title>
+        <script>
+            function Max(){
+                var a=eval(myform.a.value)
+                var b=eval(myform.b.value)
+                var c=eval(myform.c.value)
+                var result = Math.max(a,b,c)
+                mydiv.innerHTML=result                   
+            }
+            function Min(){
+                var a=eval(myform.a.value)
+                var b=eval(myform.b.value)
+                var c=eval(myform.c.value)
+                var result = Math.min(a,b,c)
+                mydiv.innerHTML=result                   
+            }
+            function Sin(){
+                var a=eval(myform.a.value)
+                var result = Math.sin(a)
+                mydiv.innerHTML=result                   
+            }
+            function Cos(){
+                var a=eval(myform.a.value)
+                var result = Math.cos(a)
+                mydiv.innerHTML=result                   
+            }
+            function BinhPhuong(){
+                var a=eval(myform.a.value)
+                var b=eval(myform.b.value)
+                var result = Math.pow(a,b)
+                mydiv.innerHTML=result                   
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table  border="1">
+                <tr>
+                    <td>a:</td>
+                    <td>
+                        <input type="number" name="a" min="1" max="1000">
+                    </td>
+                </tr>
+                <tr>
+                    <td>b:</td>
+                    <td>
+                        <input type="number" name="b" min="1" max="1000">
+                    </td>
+                </tr>
+                <tr>
+                    <td>c:</td>
+                    <td>
+                        <input type="number" name="c" min="1" max="1000">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td><div id="mydiv"></div></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" onclick="Max()">Max</button>
+                        <button type="button" onclick="Min()">Min</button>
+                        <button type="button" onclick="Sin()">Sina</button>
+                        <button type="button" onclick="Cos()">Cosa</button>
+                        <button type="button" onclick="BinhPhuong()">a^b</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
