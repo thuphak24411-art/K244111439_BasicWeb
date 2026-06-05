@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>The quadratic equation</title>
+        <script>
+            function findSolution() {
+                var a=eval(myform.a.value)
+                var b=eval(myform.b.value)
+                var c=eval(myform.c.value)
+                var delta = b*b - 4*a*c
+                if (delta<0) {
+                    mydiv.innerHTML="No solution"
+                } else if (delta==0) {
+                    var x=-b/(2*a)
+                    mydiv.innerHTML="x="+x
+                } else {
+                    var x1=(-b+Math.sqrt(delta))/(2*a)
+                    var x2=(-b-Math.sqrt(delta))/(2*a)
+                    mydiv.innerHTML="x1="+x1+" ; x2="+x2
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1">
+                <tr>
+                    <th colspan="2" style="background-color: rgb(184, 232, 184);">The quadratic equation</th>
+                </tr>
+                <tr>
+                    <td>a:</td>
+                    <td><input type="number" name="a" min="-1000" max="1000"></td>
+                </tr>
+                <tr>
+                    <td>b:</td>
+                    <td><input type="number" name="b" min="-1000" max="1000"></td>
+                </tr>
+                <tr>
+                    <td>c:</td>
+                    <td><input type="number" name="c" min="-1000" max="1000"></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td><div id="mydiv"></div></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" onclick="findSolution()">Find Solution</button>
+                        <button type="reset">Clear</button>
+                    </td>
+
+                </tr>
+            </table>
+        </form> 
+    </body>
+</html>
