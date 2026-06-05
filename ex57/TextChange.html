@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Text Change Event</title>
+        <script>
+            function calculateTotal() {
+                var price1=eval(myform.price1.value)
+                var price2=eval(myform.price2.value)
+                var price3=eval(myform.price3.value)
+                var qty1=eval(myform.qty1.value)
+                var qty2=eval(myform.qty2.value)
+                var qty3=eval(myform.qty3.value)
+                var total = price1*qty1 + price2*qty2 + price3*qty3
+                myform.total_input.value = total
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1">
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item table</th>
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td><input type="number" name="price1" value="19.95" readonly></td>
+                    <td><input type="number" name="qty1" min="0"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td><input type="number" name="price2" value="29.95" readonly></td>
+                    <td><input type="number" name="qty2" min="0"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td><input type="number" name="price3" value="39.95" readonly></td>
+                    <td><input type="number" name="qty3" min="0"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="right">
+                        <div style="margin-top: 10px;">Total: 
+                            <input type="text" name="total_input" readonly>
+                        </div>
+                        <button type="button" style="background-color: yellow; margin-top: 10px;" onclick="calculateTotal()">Sum</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
