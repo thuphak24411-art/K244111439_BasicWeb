@@ -7,17 +7,23 @@
                 var a=eval(myform.a.value)
                 var b=eval(myform.b.value)
                 var c=eval(myform.c.value)
-                var delta = b*b - 4*a*c
-                if (delta<0) {
-                    mydiv.innerHTML="No solution"
-                } else if (delta==0) {
-                    var x=-b/(2*a)
+                if (a==0) {
+                    var x=-c/b
                     mydiv.innerHTML="x="+x
-                } else {
-                    var x1=(-b+Math.sqrt(delta))/(2*a)
-                    var x2=(-b-Math.sqrt(delta))/(2*a)
-                    mydiv.innerHTML="x1="+x1+" ; x2="+x2
                 }
+                else{
+                    var delta = b*b - 4*a*c
+                    if (delta<0) {
+                        mydiv.innerHTML="No solution"
+                    } else if (delta==0) {
+                        var x=-b/(2*a)
+                        mydiv.innerHTML="x="+x
+                    } else {
+                        var x1=(-b+Math.sqrt(delta))/(2*a)
+                        var x2=(-b-Math.sqrt(delta))/(2*a)
+                        mydiv.innerHTML="x1="+x1+" ; x2="+x2
+                    }
+                }  
             }
         </script>
     </head>
