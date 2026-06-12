@@ -1,0 +1,15 @@
+#tableInfo th, #tableInfo tr, #tableInfo td {
+    border: 1px solid black;
+    padding: 8px;
+}
+#tableInfo th {
+    background-color: blue;
+    color:white;
+}
+#tableInfo tbody tr:hover {
+    background-color: yellow;
+}
+button {
+    cursor: pointer;
+    margin: 10px 10px 0 0;
+}
