@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Tiêu đề trang</title>
+        <script src="js/mainjs.js"></script>
+        <link rel="stylesheet" href="css/maincss.css">
+    </head>
+    <body>
+        <h1>Member Registration</h1>
+        <form name="myform">
+            <table> 
+                <tr>
+                    <td>Name(*)</td>
+                    <td><input type="text" name="Name" id="Name" required></td>
+                </tr>
+                <tr>
+                    <td>Birthday(*)</td>
+                    <td>
+                        Day: <select name="birthday_day" id="birthday_day" required></select>
+                        Month: <select name="birthday_month" id="birthday_month" required></select>
+                        Year: <select name="birthday_year" id="birthday_year" required></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender(*)</td>
+                    <td>
+                        <label><input type="radio" name="Gender" id="Man" value="Man" required>Man</input></label>
+                        <label><input type="radio" name="Gender" id="Woman" value="Woman" required>Woman</input></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email(*)</td>
+                    <td>
+                        <input type="text" name="Email" id="Email" required>
+                    </td>
+                </tr>
+            </table>
+    
+            <p>Your favorite</p>
+            <table>
+                <tr>
+                    <td><label><input type="checkbox" name="Hobbies" id="Shopping" value="Shopping">Shopping</input></label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" name="Hobbies"  id="Tourism" value="Tourism">Tourism</input></label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" name="Hobbies" id="Chat" value="Chat">Chat</input></label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" name="Hobbies" id="ReadaBook" value="Read a book">Read a book</input></label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" name="Hobbies" id="Listening" value="Listening to music">Listening to music</input></label></td>
+                </tr>
+            </table>
+
+            <p>Your favorite color</p>
+            <table>
+                <tr>
+                    <td style="background-color: blue;"><label><input type="radio" name="Color" id="Blue" value="Blue">Blue</input></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: red;"><label><input type="radio" name="Color" id="Red" value="Red">Red</input></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: yellow;"><label><input type="radio" name="Color" id="Yellow" value="Yellow">Yellow</input></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: green;"><label><input type="radio" name="Color" id="Green" value="Green">Green</input></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: violet;"><label><input type="radio" name="Color" id="Violet" value="Violet">Violet</input></label></td>
+                </tr>
+            </table>
+
+            <div style="display: flex;">
+                <button type="button" onclick="load_data(); create_tr(info)">Sign up</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+        <table id="tableInfo">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Birthday</th>
+                    <th>Hobbies</th>
+                    <th>Colors</th>
+                </tr>
+            </thead>
+            <tbody id="info_body">
+
+            </tbody>
+        </table>
+         <script>
+            function createBirthday() {
+                birthday_day=document.getElementById("birthday_day")
+                for (i=1; i<=31; i++) 
+                {
+                    birthday_day.innerHTML+="<option value='"+i+"'>"+i+"</option>"
+                } 
+                birthday_month=document.getElementById("birthday_month")
+                for (i=1; i<=12; i++) 
+                {
+                    birthday_month.innerHTML+="<option value='"+i+"'>"+i+"</option>"
+                }
+                birthday_year=document.getElementById("birthday_year")
+                for (i=1965; i<=2017; i++) 
+                {
+                    birthday_year.innerHTML+="<option value='"+i+"'>"+i+"</option>"
+                }
+            }
+            createBirthday()
+        </script>
+    </body>
+</html>
