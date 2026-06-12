@@ -39,6 +39,4 @@ function create_tr(info){
     tr.appendChild(td_color)
     
     document.getElementById("info_body").appendChild(tr)
-    
-    document.getElementById("info_body").appendChild(tr)
 }
