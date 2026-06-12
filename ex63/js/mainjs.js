@@ -10,6 +10,7 @@ function load_data()
     info.birthday_year=document.getElementById("birthday_year").value
     info.Hobbies=Array.from(document.querySelectorAll('input[name="Hobbies"]:checked')).map(cb=>cb.value).join(', ')
     info.Color=document.querySelector('input[name="Color"]:checked').value
+    create_tr(info)
 }
 function create_tr(info){
     var tr=document.createElement("tr")
