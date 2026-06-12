@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Tiêu đề trang</title>
+        <script src="js/mainjs.js"></script>
+        <link rel="stylesheet" href="css/maincss.css">
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" name="addNode" id="addNode" onclick="addNode()">Add Node</button>
+                    </td>
+                    <td>Content</td>
+                    <td>
+                        <input type="text" name="content" id="content" value="">
+                    </td>
+                    <td>Position</td>
+                    <td>
+                        <input type="text" name="position_add" id="position_add" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" name="removeNode" id="removeNode" onclick="removeNode()">Remove Node</button>
+                    </td>
+                    <td colspan="2"></td>
+                    <td>Position</td>
+                    <td>
+                        <input type="text" name="position_remove" id="position_remove" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" name="modifyNode" id="modfyNode" onclick="modifyNode()">Modify Node</button>
+                    </td>
+                    <td>New Content</td>
+                    <td>
+                        <input type="text" name="new_content" id="new_content" value="">
+                    </td>
+                    <td>Position</td>
+                    <td>
+                        <input type="text" name="position_modify" id="position_modify" value="">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <p>Web Node</p>
+        <div id="my_div">
+            <ul>
+
+            </ul>
+        </div>
+    </body>
+</html>
