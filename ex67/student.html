@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Tiêu đề trang</title>
+        <script src="js/main.js"></script>
+        <style>
+            @import url(css/maincss.css);
+            th {
+                cursor: pointer;
+                user-select: none;
+            }
+            th:hover {
+                background-color: #90EE90 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="tableStudent">
+            <thead>
+                <tr>
+                    <td colspan="4" style="background-color: yellow; color: black; text-align: center; font-weight: bold;">List of Students</td>
+                </tr>
+                <tr>
+                    <th onclick="sortTable(0)">Student ID</th>
+                    <th onclick="sortTable(1)">Student Name</th>
+                    <th onclick="sortTable(2)">Birthday</th>
+                    <th onclick="sortTable(3)">Gender</th>
+                </tr>
+            </thead>
+            <tbody id="studentbody">
+                <tr></tr>
+            </tbody>
+        </table>
+    </body>
+    <script>
+        studentbody=document.getElementById("studentbody")
+        dataset_path="dataset/student.xml"
+        load_students_from_xml(dataset_path, studentbody)
+    </script>
+    <script>
+        function sortTable(col) {
+            var tbody = document.querySelector("#tableStudent tbody");
+            var rows = Array.from(tbody.rows);
+            var isAsc = true;
+
+            if (lastSortedColumn === col) {
+                isAsc = !sortDirections[col];
+            }
+            sortDirections[col] = isAsc;
+            lastSortedColumn = col;
+            
+            rows.sort((a, b) => {
+                var valA = a.cells[col].textContent.trim();
+                var valB = b.cells[col].textContent.trim();
+                var cmp = 0;
+                
+                switch(col) {
+                    case 0:
+                        cmp = parseInt(valA) - parseInt(valB);
+                        break;
+                    case 1: 
+                        cmp = valA.localeCompare(valB);
+                        break;
+                    case 2: 
+                        var dateA = new Date(valA.split('/').reverse().join('-'));
+                        var dateB = new Date(valB.split('/').reverse().join('-'));
+                        cmp = dateA - dateB;
+                        break;
+                    case 3:
+                        cmp = valA.localeCompare(valB);
+                        break;
+                }
+                return isAsc ? cmp : -cmp;
+            });
+            
+            tbody.innerHTML = "";
+            rows.forEach(row => tbody.appendChild(row));
+            
+            updateIndicators(col, isAsc);
+        }
+    </script>
+</html>
